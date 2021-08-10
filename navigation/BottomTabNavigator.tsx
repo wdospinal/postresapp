@@ -10,11 +10,23 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import Principal from '../screens/Principal';
+import SearchDessert from '../screens/SearchDessert';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import { BottomTabParamList, MainStackParamList, SCREEN_NAME, TabOneParamList, TabTwoParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
+const Stack = createStackNavigator<MainStackParamList>();
+
+function Root() {
+  return (
+    <Stack.Navigator headerMode="none">
+      <Stack.Screen name={SCREEN_NAME.main} component={Principal} />
+      <Stack.Screen name={SCREEN_NAME.search} component={SearchDessert} />
+    </Stack.Navigator>
+  );
+}
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
@@ -25,7 +37,7 @@ export default function BottomTabNavigator() {
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
         name="TabOne"
-        component={TabOneNavigator}
+        component={Root}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}

@@ -20,3 +20,13 @@ export type TabOneParamList = {
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
 };
+
+export enum SCREEN_NAME {
+  main = 'app.screen.main',
+  search = 'app.screen.search',
+}
+
+export type MainStackParamList = {
+  [SCREEN_NAME.main]: undefined;
+  [SCREEN_NAME.search]: undefined;
+};
