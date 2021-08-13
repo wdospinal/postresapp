@@ -5,6 +5,8 @@ import { Image, StyleSheet } from "react-native";
 import ButtonPlus from "../components/ButtonPlus";
 import { Text, View } from "../components/Themed";
 import { SCREEN_NAME } from "../types";
+import Order from '../assets/images/order.svg';
+
 
 export default function Principal() {
   const navigation = useNavigation();
@@ -15,11 +17,7 @@ export default function Principal() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Crear un Nuevo Postre</Text>
-      <Image
-        style={styles.image}
-        resizeMode={"contain"}
-        source={require("../assets/images/orden.png")}
-      />
+      <Order width="80%" height="50%" style={styles.image}/>
       <View style={styles.buttonContainer}>
         <ButtonPlus onPress={onPress} />
       </View>
