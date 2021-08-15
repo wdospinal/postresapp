@@ -16,7 +16,7 @@ export default function HomeDessertScreen({
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Crear un Nuevo Postre</Text>
+      <Text style={styles.title} testID="createDessert">Crear un Nuevo Postre</Text>
       <Order width="60%" height="50%" style={styles.image} />
       <View style={styles.buttonContainer}>
         <ButtonPlus onPress={onPress} />

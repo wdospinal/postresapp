@@ -44,3 +44,9 @@ export type UserParamList = {
 export type DeliveryParamList = {
   [SCREEN_NAME.delivery]: undefined;
 };
+
+export type Category = {
+  id: number;
+  name: string;
+  type: string;
+};
