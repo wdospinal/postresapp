@@ -2,6 +2,16 @@
  * Learn more about using TypeScript with React Navigation:
  * https://reactnavigation.org/docs/typescript/
  */
+ export enum SCREEN_NAME {
+  home = 'app.screen.home',
+  homeStack = 'app.stack.home',
+  search = 'app.screen.search',
+  searchStack = 'app.stack.search',
+  user = 'app.screen.user',
+  userStack = 'app.stack.user',
+  delivery = 'app.screen.delivery',
+  deliveryStack = 'app.stack.delivery',
+}
 
 export type RootStackParamList = {
   Root: undefined;
@@ -9,14 +19,24 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  [SCREEN_NAME.homeStack]: undefined;
+  [SCREEN_NAME.searchStack]: undefined;
+  [SCREEN_NAME.userStack]: undefined;
+  [SCREEN_NAME.deliveryStack]: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type HomeParamList = {
+  [SCREEN_NAME.home]: undefined;
 };
 
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type SearchParamList = {
+  [SCREEN_NAME.search]: undefined;
+};
+
+export type UserParamList = {
+  [SCREEN_NAME.user]: undefined;
+};
+
+export type DeliveryParamList = {
+  [SCREEN_NAME.delivery]: undefined;
 };
