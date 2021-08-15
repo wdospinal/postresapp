@@ -11,9 +11,11 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import HomeScreen from "../screens/HomeScreen";
+import HomeDessertScreen from "../screens/HomeDessertScreen";
 import SearchScreen from "../screens/SearchScreen";
 import UserScreen from "../screens/UserScreen";
 import DeliveryScreen from "../screens/DeliveryScreen";
+import CreateScreen from "../screens/CreateScreen";
 import {
   BottomTabParamList,
   HomeParamList,
@@ -38,6 +40,7 @@ export default function BottomTabNavigator() {
           backgroundColor: Colors[colorScheme].background,
           borderTopWidth: 0,
         },
+        headerShown: false,
       }}
     >
       <BottomTab.Screen
@@ -97,11 +100,25 @@ const HomeStack = createStackNavigator<HomeParamList>();
 
 function HomeNavigator() {
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <HomeStack.Screen
+        name={SCREEN_NAME.homeDessert}
+        component={HomeDessertScreen}
+        options={{ headerTitle: "Home screen" }}
+      />
       <HomeStack.Screen
         name={SCREEN_NAME.home}
         component={HomeScreen}
         options={{ headerTitle: "Home screen" }}
+      />
+      <HomeStack.Screen
+        name={SCREEN_NAME.create}
+        component={CreateScreen}
+        options={{ headerTitle: "Create dessert screen" }}
       />
     </HomeStack.Navigator>
   );

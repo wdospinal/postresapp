@@ -5,21 +5,23 @@
  */
 
 import * as Linking from 'expo-linking';
+import { SCREEN_NAME } from '../types';
 
 export default {
   prefixes: [Linking.makeUrl('/')],
   config: {
     screens: {
       Root: {
+        initialRouteName: '/home',
         screens: {
-          TabOne: {
+          [SCREEN_NAME.homeStack]: {
             screens: {
-              TabOneScreen: 'one',
+              [SCREEN_NAME.home]: 'home',
             },
           },
-          TabTwo: {
+          [SCREEN_NAME.deliveryStack]: {
             screens: {
-              TabTwoScreen: 'two',
+              [SCREEN_NAME.delivery]: 'delivery',
             },
           },
         },

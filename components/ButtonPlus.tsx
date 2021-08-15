@@ -6,9 +6,9 @@ import Colors from "../constants/Colors";
 import { MonoText } from "./StyledText";
 import { Text, View } from "./Themed";
 
-export default function EditScreenInfo({ onPress }: { onPress: () => void }) {
+export default function ButtonPlus({ onPress }: { onPress: () => void }) {
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity style={styles.button} onPress={onPress}>
       <View style={styles.container}>
         <Text style={styles.plus}>+</Text>
       </View>
@@ -22,14 +22,16 @@ const styles = StyleSheet.create({
     height: 70,
   },
   container: {
-    flex: 1,
+    width: 70,
+    height: 70,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5AB60",
+    backgroundColor: Colors.light.primary,
     borderRadius: 70,
   },
   plus: {
     fontSize: 50,
-    textAlign: "center",
+    lineHeight: 50,
+    fontWeight: '400',
   },
 });
