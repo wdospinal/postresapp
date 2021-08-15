@@ -4,10 +4,10 @@ import { StyleSheet } from 'react-native';
 import { Text, View } from "../components/Themed";
 import Colors from "../constants/Colors";
 
-export default function UserScreen() {
+export default function CreateScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>This screen UserScreen doesn't exist.</Text>
+      <Text style={styles.title}>This screen Create doesn't exist.</Text>
     </View>
   );
 }

@@ -1,9 +1,9 @@
-const tintColorLight = '#F5AB60';
-const white = '#FFF';
-const black = '#000';
-const inactiveTintColor = '#ADADAF';
-const backgroundLight = '#F2F2F2'
-const icon = '#CCC';
+const tintColorLight = "#F5AB60";
+const white = "#FFF";
+const black = "#000";
+const inactiveTintColor = "#ADADAF";
+const backgroundLight = "#F2F2F2";
+const icon = "#CCC";
 
 export default {
   light: {
@@ -13,6 +13,7 @@ export default {
     inactive: inactiveTintColor,
     tabIconDefault: icon,
     tabIconSelected: tintColorLight,
+    primary: tintColorLight,
   },
   dark: {
     text: white,

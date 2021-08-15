@@ -4,7 +4,9 @@
  */
  export enum SCREEN_NAME {
   home = 'app.screen.home',
+  homeDessert = 'app.screen.homeDessert',
   homeStack = 'app.stack.home',
+  create = 'app.screen.create',
   search = 'app.screen.search',
   searchStack = 'app.stack.search',
   user = 'app.screen.user',
@@ -27,6 +29,8 @@ export type BottomTabParamList = {
 
 export type HomeParamList = {
   [SCREEN_NAME.home]: undefined;
+  [SCREEN_NAME.homeDessert]: undefined;
+  [SCREEN_NAME.create]: undefined;
 };
 
 export type SearchParamList = {
