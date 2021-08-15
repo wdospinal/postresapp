@@ -4,9 +4,13 @@
  */
  export enum SCREEN_NAME {
   home = 'app.screen.home',
+  homeStack = 'app.stack.home',
   search = 'app.screen.search',
+  searchStack = 'app.stack.search',
   user = 'app.screen.user',
+  userStack = 'app.stack.user',
   delivery = 'app.screen.delivery',
+  deliveryStack = 'app.stack.delivery',
 }
 
 export type RootStackParamList = {
@@ -15,10 +19,10 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  [SCREEN_NAME.home]: undefined;
-  [SCREEN_NAME.search]: undefined;
-  [SCREEN_NAME.user]: undefined;
-  [SCREEN_NAME.delivery]: undefined;
+  [SCREEN_NAME.homeStack]: undefined;
+  [SCREEN_NAME.searchStack]: undefined;
+  [SCREEN_NAME.userStack]: undefined;
+  [SCREEN_NAME.deliveryStack]: undefined;
 };
 
 export type HomeParamList = {

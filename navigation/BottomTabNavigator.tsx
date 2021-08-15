@@ -30,18 +30,18 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName={SCREEN_NAME.home}
-      tabBarOptions={{
-        activeTintColor: Colors[colorScheme].tint,
-        inactiveTintColor: Colors[colorScheme].inactive,
-        style: {
+      initialRouteName={SCREEN_NAME.homeStack}
+      screenOptions={{
+        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarInactiveTintColor: Colors[colorScheme].inactive,
+        tabBarStyle: {
           backgroundColor: Colors[colorScheme].background,
           borderTopWidth: 0,
         },
       }}
     >
       <BottomTab.Screen
-        name={SCREEN_NAME.home}
+        name={SCREEN_NAME.homeStack}
         component={HomeNavigator}
         options={{
           tabBarLabel: () => null,
@@ -51,17 +51,15 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name={SCREEN_NAME.search}
+        name={SCREEN_NAME.searchStack}
         component={SearchNavigator}
         options={{
           tabBarLabel: () => null,
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="search" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name={SCREEN_NAME.user}
+        name={SCREEN_NAME.userStack}
         component={UserNavigator}
         options={{
           tabBarLabel: () => null,
@@ -71,7 +69,7 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name={SCREEN_NAME.delivery}
+        name={SCREEN_NAME.deliveryStack}
         component={DeliveryNavigator}
         options={{
           tabBarLabel: () => null,
@@ -144,7 +142,7 @@ function DeliveryNavigator() {
       <DeliveryStack.Screen
         name={SCREEN_NAME.delivery}
         component={DeliveryScreen}
-        options={{ headerTitle: "Tab Two Title" }}
+        options={{ headerTitle: "Delivery Screen" }}
       />
     </DeliveryStack.Navigator>
   );
