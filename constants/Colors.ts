@@ -14,6 +14,7 @@ export default {
     tabIconDefault: icon,
     tabIconSelected: tintColorLight,
     primary: tintColorLight,
+    white,
   },
   dark: {
     text: white,

@@ -16,6 +16,7 @@ import SearchScreen from "../screens/SearchScreen";
 import UserScreen from "../screens/UserScreen";
 import DeliveryScreen from "../screens/DeliveryScreen";
 import CreateScreen from "../screens/CreateScreen";
+import DetailDessertScreen from "../screens/DetailDessertScreen";
 import {
   BottomTabParamList,
   HomeParamList,
@@ -106,19 +107,32 @@ function HomeNavigator() {
       }}
     >
       <HomeStack.Screen
-        name={SCREEN_NAME.homeDessert}
-        component={HomeDessertScreen}
-        options={{ headerTitle: "Home screen" }}
-      />
-      <HomeStack.Screen
         name={SCREEN_NAME.home}
         component={HomeScreen}
-        options={{ headerTitle: "Home screen" }}
+      />
+      <HomeStack.Screen
+        name={SCREEN_NAME.homeDessert}
+        component={HomeDessertScreen}
+      />
+      <HomeStack.Screen
+        name={SCREEN_NAME.detailDessert}
+        component={DetailDessertScreen}
+        options={({ route }) => ({
+          headerShown: true,
+          headerBackTitle: '',
+          title: route.params.dessert.name,
+          headerStyle: {
+            backgroundColor: Colors.light.primary,
+          },
+          headerTintColor: Colors.light.white,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        })}
       />
       <HomeStack.Screen
         name={SCREEN_NAME.create}
         component={CreateScreen}
-        options={{ headerTitle: "Create dessert screen" }}
       />
     </HomeStack.Navigator>
   );
