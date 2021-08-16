@@ -1,8 +1,10 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 
 import Colors from "../constants/Colors";
 import { Text, View } from "./Themed";
+
+const { height } = Dimensions.get("window");
 
 export default function ButtonPlus({ onPress }: { onPress: () => void }) {
   return (
@@ -14,22 +16,25 @@ export default function ButtonPlus({ onPress }: { onPress: () => void }) {
   );
 }
 
+const BUTTON_SIZE = height > 700 ? 70 : 50;
+const BUTTON_PLUS_SIZE = height > 700 ? 50 : 30;
+
 const styles = StyleSheet.create({
   button: {
-    width: 70,
-    height: 70,
+    width: BUTTON_SIZE,
+    height: BUTTON_SIZE,
   },
   container: {
-    width: 70,
-    height: 70,
+    width: BUTTON_SIZE,
+    height: BUTTON_SIZE,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.light.primary,
-    borderRadius: 70,
+    borderRadius: BUTTON_SIZE,
   },
   plus: {
-    fontSize: 50,
-    lineHeight: 50,
+    fontSize: BUTTON_PLUS_SIZE,
+    lineHeight: BUTTON_PLUS_SIZE,
     fontWeight: '400',
   },
 });

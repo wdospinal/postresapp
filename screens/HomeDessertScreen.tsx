@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import React from "react";
+import { StyleSheet, Dimensions } from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
 
 import { Text, View } from "../components/Themed";
@@ -7,6 +7,8 @@ import ButtonPlus from "../components/ButtonPlus";
 import Colors from "../constants/Colors";
 import Order from "../assets/images/order.svg";
 import { HomeParamList, SCREEN_NAME } from "../types";
+
+const { height } = Dimensions.get("window");
 
 export default function HomeDessertScreen({
   navigation,
@@ -32,12 +34,12 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: 3,
-    width: '80%',
-    fontSize: 40,
+    width: "80%",
+    fontSize: height > 700 ? 40 : 30,
+    lineHeight: height > 700 ? 41 : 31,
     fontWeight: "700",
-    lineHeight: 41,
-    paddingLeft: '10%',
-    paddingTop: '30%',
+    paddingLeft: "10%",
+    paddingTop: "30%",
   },
   image: {
     flex: 4,
@@ -51,7 +53,6 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 2,
-    marginTop: 30,
     alignSelf: "center",
     color: Colors.light.background,
   },
