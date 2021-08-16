@@ -38,6 +38,7 @@ export default function HomeScreen({
   const renderCategory = (category: Category) => {
     return (
       <ButtonCategory
+        key={category.id}
         category={category}
         onPress={() => openPressCategory(category)}
         selected={selected}
@@ -52,6 +53,7 @@ export default function HomeScreen({
   const renderDessert = (dessert: Dessert) => {
     return (
       <DessertCard
+        key={dessert.id}
         dessert={dessert}
         onPress={() => openPressDessert(dessert)}
       />
