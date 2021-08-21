@@ -5,13 +5,11 @@ import { FlatList, ScrollView, TextInput } from "react-native-gesture-handler";
 import DessertCard from "../components/DessertCard";
 import { FontAwesome } from "@expo/vector-icons";
 
-import { Text, View } from "../components/Themed";
+import { View } from "../components/Themed";
 import Colors from "../constants/Colors";
-import { mockCategories, mockDesserts } from "../mock";
+import { mockDesserts } from "../mock";
 import {
   CardSizes,
-  Category,
-  CategoryName,
   Dessert,
   SCREEN_NAME,
   SearchParamList,
@@ -34,7 +32,7 @@ export default function SearchScreen({
       setDesserts(
         mockDesserts.filter(
           (cat) =>
-            cat.name.toLowerCase().includes(text) ||
+            cat.name.toLowerCase().includes(text.toLowerCase()) ||
             cat.type.includes(text)
         )
       );
