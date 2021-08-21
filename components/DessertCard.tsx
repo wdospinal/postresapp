@@ -64,9 +64,9 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   containerSmall: {
-    top: -IMAGE_SIZE / 4,
-    width: IMAGE_SIZE / 1.1,
-    height: IMAGE_SIZE + 25,
+    top: -IMAGE_SIZE / 3,
+    width: IMAGE_SIZE + 20,
+    height: IMAGE_SIZE + 50,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.light.white,
@@ -74,13 +74,13 @@ const styles = StyleSheet.create({
   },
   name: {
     lineHeight: 22,
-    fontSize: 22,
+    fontSize: height > 700 ? 22 : 18,
     fontWeight: "600",
     textAlign: "center",
   },
   price: {
     lineHeight: 20,
-    fontSize: 17,
+    fontSize: height > 700 ? 17 : 12,
     fontWeight: "bold",
     textAlign: "center",
     marginTop: 40,
