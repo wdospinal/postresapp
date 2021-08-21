@@ -1,4 +1,6 @@
 import { RouteProp, useNavigation } from "@react-navigation/native";
+import { StackNavigationProp, StackScreenProps } from "@react-navigation/stack";
+
 import React, { useCallback, useState } from "react";
 import { Image, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
@@ -7,24 +9,33 @@ import { Text, View } from "../components/Themed";
 import Colors from "../constants/Colors";
 import { Dessert, HomeParamList, SCREEN_NAME } from "../types";
 
-interface DetailDessertProps {
-  route: RouteProp<HomeParamList, SCREEN_NAME.detailDessert>;
-}
-
 const { height } = Dimensions.get("window");
 
-export default function DetailDessertScreen({ route }: DetailDessertProps) {
+type ProfileScreenRouteProp = RouteProp<
+  HomeParamList,
+  SCREEN_NAME.detailDessert
+>;
+
+type ProfileScreenNavigationProp = StackNavigationProp<HomeParamList>;
+
+type Props = {
+  route: ProfileScreenRouteProp;
+  navigation: ProfileScreenNavigationProp;
+};
+
+export default function DetailDessertScreen({ route, navigation }: Props) {
   const [dessert, currentDessert] = useState<Dessert>();
-  const navigation = useNavigation();
 
   React.useEffect(() => {
     if (route.params?.dessert) {
       currentDessert(route.params?.dessert);
     }
   }, [route.params?.dessert]);
-  const openPressDessert = useCallback(() => {
-    navigation.navigate(SCREEN_NAME.detailDessert, { dessert });
-  }, []);
+  const openPressAddCar = useCallback(() => {
+    if (dessert) {
+      navigation.navigate(SCREEN_NAME.order, { dessert });
+    }
+  }, [dessert]);
   return (
     <View style={styles.container}>
       <Image
@@ -45,7 +56,7 @@ export default function DetailDessertScreen({ route }: DetailDessertProps) {
         <Text style={styles.header}>Politica de retornos y devoluciones</Text>
         <Text style={styles.info}>No se reciben reclamos ni devoluciones</Text>
       </ScrollView>
-      <TouchableOpacity onPress={openPressDessert} style={styles.button}>
+      <TouchableOpacity onPress={openPressAddCar} style={styles.button}>
         <Text style={styles.buttonText}>Agregar al pedido</Text>
       </TouchableOpacity>
     </View>
