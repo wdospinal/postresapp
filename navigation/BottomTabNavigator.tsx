@@ -120,8 +120,8 @@ function HomeNavigator() {
         component={DetailDessertScreen}
         options={({ route }) => ({
           headerShown: true,
-          headerBackTitle: "",
-          title: route.params.dessert.name,
+          headerBackTitle: '',
+          title: `Postre de ${route.params.dessert.name}`,
           headerStyle: {
             backgroundColor: Colors.light.primary,
           },

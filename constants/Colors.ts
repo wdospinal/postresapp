@@ -5,6 +5,7 @@ const inactiveTintColor = "#ADADAF";
 const backgroundLight = "#F2F2F2";
 const backgroundWhite = "#F9F9F9";
 const icon = "#CCC";
+const textWhite = "#F6F6F9";
 
 export default {
   light: {
@@ -16,6 +17,7 @@ export default {
     tabIconDefault: icon,
     tabIconSelected: tintColorLight,
     primary: tintColorLight,
+    textWhite,
     white,
   },
   dark: {
@@ -26,5 +28,7 @@ export default {
     tabIconDefault: icon,
     inactive: inactiveTintColor,
     tabIconSelected: white,
+    textWhite,
+    white,
   },
 };
