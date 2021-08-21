@@ -59,6 +59,10 @@ export default function BottomTabNavigator() {
         component={SearchNavigator}
         options={{
           tabBarLabel: () => null,
+          tabBarStyle: {
+            backgroundColor: Colors[colorScheme].backgroundWhite,
+            borderTopWidth: 0,
+          },
           tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
         }}
       />
@@ -106,10 +110,7 @@ function HomeNavigator() {
         headerShown: false,
       }}
     >
-      <HomeStack.Screen
-        name={SCREEN_NAME.home}
-        component={HomeScreen}
-      />
+      <HomeStack.Screen name={SCREEN_NAME.home} component={HomeScreen} />
       <HomeStack.Screen
         name={SCREEN_NAME.homeDessert}
         component={HomeDessertScreen}
@@ -119,21 +120,18 @@ function HomeNavigator() {
         component={DetailDessertScreen}
         options={({ route }) => ({
           headerShown: true,
-          headerBackTitle: '',
+          headerBackTitle: "",
           title: route.params.dessert.name,
           headerStyle: {
             backgroundColor: Colors.light.primary,
           },
           headerTintColor: Colors.light.white,
           headerTitleStyle: {
-            fontWeight: 'bold',
+            fontWeight: "bold",
           },
         })}
       />
-      <HomeStack.Screen
-        name={SCREEN_NAME.create}
-        component={CreateScreen}
-      />
+      <HomeStack.Screen name={SCREEN_NAME.create} component={CreateScreen} />
     </HomeStack.Navigator>
   );
 }
@@ -141,11 +139,31 @@ const SearchStack = createStackNavigator<SearchParamList>();
 
 function SearchNavigator() {
   return (
-    <SearchStack.Navigator>
+    <SearchStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <SearchStack.Screen
         name={SCREEN_NAME.search}
         component={SearchScreen}
         options={{ headerTitle: "Search screen" }}
+      />
+      <SearchStack.Screen
+        name={SCREEN_NAME.detailDessert}
+        component={DetailDessertScreen}
+        options={({ route }) => ({
+          headerShown: true,
+          headerBackTitle: "",
+          title: route.params.dessert.name,
+          headerStyle: {
+            backgroundColor: Colors.light.primary,
+          },
+          headerTintColor: Colors.light.white,
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        })}
       />
     </SearchStack.Navigator>
   );

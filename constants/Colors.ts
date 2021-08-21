@@ -3,12 +3,14 @@ const white = "#FFF";
 const black = "#000";
 const inactiveTintColor = "#ADADAF";
 const backgroundLight = "#F2F2F2";
+const backgroundWhite = "#F9F9F9";
 const icon = "#CCC";
 
 export default {
   light: {
     text: black,
     background: backgroundLight,
+    backgroundWhite,
     tint: tintColorLight,
     inactive: inactiveTintColor,
     tabIconDefault: icon,
@@ -19,6 +21,7 @@ export default {
   dark: {
     text: white,
     background: black,
+    backgroundWhite,
     tint: white,
     tabIconDefault: icon,
     inactive: inactiveTintColor,
