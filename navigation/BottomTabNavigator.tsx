@@ -25,6 +25,7 @@ import {
   SearchParamList,
   UserParamList,
 } from "../types";
+import OrderScreen from "../screens/OrderScreen";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -120,8 +121,8 @@ function HomeNavigator() {
         component={DetailDessertScreen}
         options={({ route }) => ({
           headerShown: true,
-          headerBackTitle: "",
-          title: route.params.dessert.name,
+          headerBackTitle: '',
+          title: `Postre de ${route.params.dessert.name}`,
           headerStyle: {
             backgroundColor: Colors.light.primary,
           },
@@ -131,7 +132,14 @@ function HomeNavigator() {
           },
         })}
       />
-      <HomeStack.Screen name={SCREEN_NAME.create} component={CreateScreen} />
+      <HomeStack.Screen
+        name={SCREEN_NAME.create}
+        component={CreateScreen}
+      />
+      <HomeStack.Screen
+        name={SCREEN_NAME.order}
+        component={OrderScreen}
+      />
     </HomeStack.Navigator>
   );
 }
@@ -155,7 +163,7 @@ function SearchNavigator() {
         options={({ route }) => ({
           headerShown: true,
           headerBackTitle: "",
-          title: route.params.dessert.name,
+          title: `Postre de ${route.params.dessert.name}`,
           headerStyle: {
             backgroundColor: Colors.light.primary,
           },
