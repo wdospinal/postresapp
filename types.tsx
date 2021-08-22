@@ -37,6 +37,7 @@ export type HomeParamList = {
 
 export type SearchParamList = {
   [SCREEN_NAME.search]: undefined;
+  [SCREEN_NAME.detailDessert]: { dessert: Dessert };
 };
 
 export type UserParamList = {
@@ -66,4 +67,9 @@ export enum CategoryName {
   general = "general",
   fruit = "fruit",
   artificial = "artificial",
+}
+
+export enum CardSizes {
+  BIG = "BIG",
+  SMALL = "SMALL",
 }

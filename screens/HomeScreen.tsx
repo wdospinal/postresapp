@@ -7,6 +7,7 @@ import { Text, View } from "../components/Themed";
 import Colors from "../constants/Colors";
 import { mockCategories, mockDesserts } from "../mock";
 import {
+  CardSizes,
   Category,
   CategoryName,
   Dessert,
@@ -56,6 +57,7 @@ export default function HomeScreen({
         key={dessert.id}
         dessert={dessert}
         onPress={() => openPressDessert(dessert)}
+        size={CardSizes.BIG}
       />
     );
   };
