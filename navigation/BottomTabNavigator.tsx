@@ -17,6 +17,7 @@ import UserScreen from "../screens/UserScreen";
 import DeliveryScreen from "../screens/DeliveryScreen";
 import CreateScreen from "../screens/CreateScreen";
 import DetailDessertScreen from "../screens/DetailDessertScreen";
+import SuccessfulOrderScreen from "../screens/SuccessfulOrder";
 import {
   BottomTabParamList,
   HomeParamList,
@@ -24,6 +25,7 @@ import {
   DeliveryParamList,
   SearchParamList,
   UserParamList,
+  SuccessfulOrderParamList,
 } from "../types";
 import OrderScreen from "../screens/OrderScreen";
 
@@ -87,6 +89,16 @@ export default function BottomTabNavigator() {
           ),
         }}
       />
+      <BottomTab.Screen
+        name={SCREEN_NAME.successfulOrderStack}
+        component={SuccessfulOderNavigator}
+        options={{
+          tabBarLabel: () => null,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="list" color={color} />
+          ),
+        }}
+      />
     </BottomTab.Navigator>
   );
 }
@@ -123,6 +135,22 @@ function HomeNavigator() {
           headerShown: true,
           headerBackTitle: '',
           title: `Postre de ${route.params.dessert.name}`,
+          headerStyle: {
+            backgroundColor: Colors.light.primary,
+          },
+          headerTintColor: Colors.light.white,
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        })}
+      />
+      <HomeStack.Screen
+        name={SCREEN_NAME.successfulOrder}
+        component={SuccessfulOrderScreen}
+        options={({ route }) => ({
+          headerShown: true,
+          headerBackTitle: '',
+          title: `Pedido realizado con exito`,
           headerStyle: {
             backgroundColor: Colors.light.primary,
           },
@@ -202,5 +230,19 @@ function DeliveryNavigator() {
         options={{ headerTitle: "Delivery Screen" }}
       />
     </DeliveryStack.Navigator>
+  );
+}
+
+const SuccessfulOrderStack = createStackNavigator<SuccessfulOrderParamList>();
+
+function SuccessfulOderNavigator() {
+  return (
+    <SuccessfulOrderStack.Navigator>
+      <SuccessfulOrderStack.Screen
+        name={SCREEN_NAME.successfulOrder}
+        component={SuccessfulOrderScreen}
+        options={{ headerTitle: "Exito" }}
+      />
+    </SuccessfulOrderStack.Navigator>
   );
 }
