@@ -6,6 +6,7 @@ export enum SCREEN_NAME {
   home = "app.screen.home",
   homeDessert = "app.screen.homeDessert",
   detailDessert = "app.screen.detailDessert",
+  successfulOrder = "app.screen.successfulOrder",
   order = "app.screen.order",
   homeStack = "app.stack.home",
   create = "app.screen.create",
@@ -15,6 +16,7 @@ export enum SCREEN_NAME {
   userStack = "app.stack.user",
   delivery = "app.screen.delivery",
   deliveryStack = "app.stack.delivery",
+  successfulOrderStack = "app.stack.successfulOrder",
 }
 
 export type RootStackParamList = {
@@ -27,12 +29,14 @@ export type BottomTabParamList = {
   [SCREEN_NAME.searchStack]: undefined;
   [SCREEN_NAME.userStack]: undefined;
   [SCREEN_NAME.deliveryStack]: undefined;
+  [SCREEN_NAME.successfulOrderStack]: undefined;
 };
 
 export type HomeParamList = {
   [SCREEN_NAME.home]: undefined;
   [SCREEN_NAME.homeDessert]: undefined;
   [SCREEN_NAME.detailDessert]: { dessert: Dessert };
+  [SCREEN_NAME.successfulOrder]: undefined
   [SCREEN_NAME.order]: { dessert: Dessert };
   [SCREEN_NAME.create]: undefined;
 };
@@ -48,6 +52,10 @@ export type UserParamList = {
 
 export type DeliveryParamList = {
   [SCREEN_NAME.delivery]: undefined;
+};
+
+export type SuccessfulOrderParamList = {
+  [SCREEN_NAME.successfulOrder]: undefined;
 };
 
 export type Dessert = {
