@@ -1,4 +1,4 @@
- # Dollaride Mobile
+ # Postres App
 
 This repository contains the application source code for the project Postres app.
 
@@ -47,20 +47,16 @@ Include logo/demo screenshot etc.
 
 `yarn use 1.22.10`
 
-`gem install cocoapods -v 1.10.1`
-
 ## Installation
 
 ### Setup vars for environment
 
 **_copy .env.example file with the vars gave by the dev team_**
 
-0. `cp .env.example .env`
-
 1. Cloned off the staging branch.
 
    ```bash
-   gh repo clone flatironsdevelopment/dollaride-mobile
+   gh repo clone https://github.com/wdospinal/postresappe
    git checkout staging
    ```
 
@@ -83,6 +79,7 @@ this must be done in the root directory
 
 ```bash
 yarn start --reset-cache
+option a for android
 ```
 
 ```sh
