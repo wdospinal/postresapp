@@ -167,6 +167,18 @@ function HomeNavigator() {
       <HomeStack.Screen
         name={SCREEN_NAME.order}
         component={OrderScreen}
+        options={() => ({
+          headerShown: true,
+          headerBackTitleVisible: false,
+          title: `Pedido`,
+          headerStyle: {
+            backgroundColor: Colors.light.primary,
+          },
+          headerTintColor: Colors.light.white,
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        })}
       />
     </HomeStack.Navigator>
   );
