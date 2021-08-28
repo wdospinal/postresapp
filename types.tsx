@@ -83,3 +83,11 @@ export enum CardSizes {
   BIG = "BIG",
   SMALL = "SMALL",
 }
+
+export enum StatusName {
+  done = "REALIZADO",
+  delivered = "DESPACHADO",
+  deliveredWithPayment = "ENTREGADO SIN PAGO",
+  deliveredWithoutPayment = "ENTREGADO CON PAGO",
+  cancelled = "CANCELADO",
+}

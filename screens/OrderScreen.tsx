@@ -6,6 +6,7 @@ import { StyleSheet } from "react-native";
 import { Text, View } from "../components/Themed";
 import Colors from "../constants/Colors";
 import { HomeParamList, SCREEN_NAME } from "../types";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 type ProfileScreenRouteProp = RouteProp<
   HomeParamList,
@@ -24,6 +25,15 @@ export default function OrderScreen({ route, navigation }: Props) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{dessert.name}</Text>
+      <Text style={styles.title}>Informacion de envio</Text>
+      <View style={styles.gesture}>
+        <MaterialCommunityIcons
+          name="gesture-swipe-horizontal"
+          size={24}
+          color="black"
+        />
+        <Text style={styles.title}>swipe el item para borrarlo</Text>
+      </View>
     </View>
   );
 }
@@ -40,12 +50,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
-  },
-  linkText: {
-    fontSize: 14,
-    color: Colors.light.primary,
-  },
+  gesture: {
+    flexDirection: 'row',
+  }
 });
